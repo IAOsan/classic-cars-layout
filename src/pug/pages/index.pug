@@ -1,0 +1,19 @@
+extends ../templates/template
+block home 
+   //- menu
+   .menu
+   //- navbar
+   include ../blocks/navbar
+   .container 
+      header#home.section.header
+         include ../blocks/header
+      main 
+         article.container
+            section#popular.section.popular
+               include ../blocks/popular
+            section#video.section.video-gallery
+               include ../blocks/videoGallery
+            section#image.section.image-gallery
+               include ../blocks/imageGallery
+            section#contact.section.contact
+               include ../blocks/contact

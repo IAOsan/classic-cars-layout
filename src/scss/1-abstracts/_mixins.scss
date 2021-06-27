@@ -1,0 +1,5 @@
+@mixin respond($breakpoint, $type: 'max-width') {
+   @media only screen and ($type: #{$breakpoint / 16}em) {
+      @content;
+   }
+}

@@ -1,0 +1,6 @@
+nav.navbar 
+   ul.navbar__list 
+      each link in navLinks
+         li.navbar__item
+            a.navbar__link(href=`#${link.link}`) #{link.name}
+         

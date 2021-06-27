@@ -1,0 +1,11 @@
+.btn {
+   border: none;
+   cursor: pointer;
+   &--white {
+      background-color: #fff;
+   }
+   &--block {
+      display: block;
+      width: 100%;
+   }
+}

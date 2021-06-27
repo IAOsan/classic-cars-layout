@@ -1,0 +1,174 @@
+.container {
+   width: 100%;
+}
+.section {
+   width: 100%;
+   height: 100vh;
+   background-color: #efefef;
+   position: relative;
+   left: 0;
+   margin-bottom: 3rem;
+   box-shadow: 0.5rem 0.5rem 1rem #aaa;
+   padding: 5rem 0;
+   transition: var(--transition);
+   @include respond(1500) {
+      padding: 4.5rem;
+   }
+   @include respond(576) {
+      padding: 6rem 1.5rem;
+   }
+}
+.section.menu--change {
+   width: calc(100% - 15vw);
+   left: 15vw;
+   filter: brightness(0.4);
+   transition: var(--transition) cubic-bezier(0.83, 0, 0.17, 1);
+   @include respond(1500) {
+      left: 20vw;
+   }
+   @include respond(992) {
+      width: 100%;
+      left: 0;
+   }
+}
+/* -------------------------------------------------------------------------- */
+/*                                    MENU                                    */
+/* -------------------------------------------------------------------------- */
+
+.menu {
+   width: 4rem;
+   height: 4rem;
+   position: fixed;
+   top: 2rem;
+   left: 2rem;
+   z-index: 20;
+   transition: var(--transition);
+   cursor: pointer;
+   // inner lines
+   &::before,
+   &::after {
+      content: '';
+      background-color: #fff;
+      width: 100%;
+      height: 0.3rem;
+      position: absolute;
+      box-shadow: 0.1rem 0.1rem 0.3rem #222;
+      transition: var(--transition-s);
+   }
+   &::before {
+      top: 32%;
+      left: 0;
+   }
+   &::after {
+      height: 0.4rem;
+      bottom: 32%;
+      left: 0;
+   }
+}
+.menu.menu--change {
+   left: 15.5vw;
+   transition: var(--transition) cubic-bezier(0.83, 0, 0.17, 1);
+   @include respond(1500) {
+      left: 20.5vw;
+   }
+   @include respond(1200) {
+      left: 24vw;
+   }
+   @include respond(992) {
+      left: 25vw;
+   }
+   @include respond(768) {
+      left: 36vw;
+   }
+   @include respond(576) {
+      left: 51vw;
+   }
+   @include respond(480) {
+      left: 72vw;
+   }
+   // animate inner lines
+   &::before {
+      width: 130%;
+      top: 0;
+      transform: rotate(405deg);
+      transform-origin: left;
+   }
+   &::after {
+      width: 130%;
+      bottom: 0;
+      transform: rotate(315deg);
+      transform-origin: left;
+   }
+}
+/* -------------------------------------------------------------------------- */
+/*                                 NAVIGATION                                 */
+/* -------------------------------------------------------------------------- */
+.navbar {
+   width: 15vw;
+   background-color: #fff;
+   position: fixed;
+   top: 0;
+   left: -15vw; // hidde navbar
+   bottom: 0;
+   padding: 4rem 0 0 4rem;
+   z-index: 10;
+   transition: var(--transition);
+   @include respond(1500) {
+      left: -20vw; // hidde navbar
+      width: 20vw;
+   }
+   @include respond(1200) {
+      left: -23vw;
+      width: 23vw;
+   }
+   @include respond(992) {
+      left: -24vw;
+      width: 24vw;
+   }
+   @include respond(768) {
+      left: -35vw;
+      width: 35vw;
+   }
+   @include respond(576) {
+      left: -50vw;
+      width: 50vw;
+   }
+   @include respond(480) {
+      left: -70vw;
+      width: 70vw;
+   }
+   &__list {
+      list-style-type: none;
+   }
+   &__link {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2rem 0;
+      color: #777;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: var(--transition) ease-in-out;
+      &:hover {
+         color: #111;
+      }
+   }
+}
+.navbar.menu--change {
+   left: 0;
+   transition: var(--transition) cubic-bezier(0.83, 0, 0.17, 1);
+}
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+.copyright {
+   margin-top: 5rem;
+   font-size: 2rem;
+   font-weight: 300;
+   color: #fff;
+   text-align: center;
+   @include respond(576) {
+      font-size: 1.5rem;
+   }
+}
